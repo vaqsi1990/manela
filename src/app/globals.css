@@ -30,3 +30,82 @@ body {
   background: #171614;
   color: #f6f3ee;
 }
+
+.site-intro {
+  position: fixed;
+  z-index: 80;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background: #161616;
+  transition: top 1s ease;
+}
+
+.site-intro.is-away {
+  top: -100vh;
+  top: -100dvh;
+}
+
+.site-intro-word {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: clamp(3rem, 10vw, 6.5rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  margin-right: -0.14em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.site-intro-letter {
+  position: relative;
+  display: inline-block;
+  bottom: -20px;
+  opacity: 0;
+}
+
+.site-intro-letter.is-active {
+  bottom: 0;
+  opacity: 1;
+  transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.site-intro-letter.is-fade {
+  bottom: 150px;
+  opacity: 0;
+  transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-intro {
+    display: none;
+  }
+}
+
+.catalog-panel {
+  animation: catalog-in 160ms ease;
+}
+
+@keyframes catalog-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catalog-panel {
+    animation: none;
+  }
+}

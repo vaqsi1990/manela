@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Newsreader } from "next/font/google";
+import { LanguageProvider } from "@/components/language";
+import { SiteHeader } from "@/components/site-header";
+import { SiteIntro } from "@/components/site-intro";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,8 +32,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="ka"
       className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <SiteIntro />
+        <LanguageProvider>
+          <SiteHeader />
+          {children}
+        </LanguageProvider>
+      </body>
     </html>
   );
 }
