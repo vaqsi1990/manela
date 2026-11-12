@@ -170,7 +170,7 @@ export function SiteHeader() {
         {catalogOpen ? (
           <div id="catalog-menu" className="catalog-panel absolute inset-x-0 top-[calc(100%-2px)] z-30 max-h-[calc(100dvh-10.5rem)] overflow-y-auto pt-0.5">
             <div className="border-b border-[#ececec] bg-white">
-            <ul className="mx-auto grid max-w-7xl grid-cols-1 gap-x-16 gap-y-11 px-4 py-10 sm:grid-cols-2 sm:px-6 md:grid-cols-3 lg:py-12">
+            <ul className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-5 px-4 py-5 sm:grid-cols-2 sm:px-6 md:grid-cols-3">
               {[...catalogItems.map((item) => ({ id: item.id, number: item.number, href: `/catalog/${item.id}` })), { id: "all" as const, number: "07", href: "/catalog/all" }].map((item) => {
                 const Icon = item.id === "all" ? LayoutGrid : catalogIcons[item.id];
                 return (
@@ -180,15 +180,15 @@ export function SiteHeader() {
                       className="group flex flex-col"
                       onClick={() => setCatalogOpen(false)}
                     >
-                      <span className="text-[13px] font-semibold tracking-[0.08em] text-[#8b9098]">{item.number}</span>
-                      <Icon className="mt-7 text-[#1c1c1c]" size={26} strokeWidth={1.6} aria-hidden="true" />
-                      <span className="mt-8 flex items-center gap-4">
-                        <span className="max-w-[11rem] text-[16px] font-bold leading-snug text-[#1c1c1c]">
+                      <span className="text-[12px] font-semibold tracking-[0.08em] text-[#8b9098]">{item.number}</span>
+                      <Icon className="mt-2.5 text-[#1c1c1c]" size={20} strokeWidth={1.6} aria-hidden="true" />
+                      <span className="mt-2.5 flex items-center gap-3">
+                        <span className="max-w-[9.5rem] text-[14px] font-bold leading-snug text-[#1c1c1c]">
                           {t.catalogMenu[item.id]}
                         </span>
                         <ArrowUpRight
                           className="shrink-0 text-[#8b9098] transition duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#1c1c1c]"
-                          size={16}
+                          size={14}
                           strokeWidth={1.7}
                           aria-hidden="true"
                         />
