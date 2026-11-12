@@ -1,7 +1,7 @@
 "use client";
 
 import { catalogItems } from "@/lib/catalog";
-import { ArrowUpRight, LayoutGrid, Search, ShoppingCart } from "lucide-react";
+import { ArrowUpRight, Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -171,12 +171,12 @@ export function SiteHeader() {
           <div id="catalog-menu" className="catalog-panel absolute inset-x-0 top-[calc(100%-2px)] z-30 max-h-[calc(100dvh-10.5rem)] overflow-y-auto pt-0.5">
             <div className="border-b border-[#ececec] bg-white">
             <ul className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-5 px-4 py-5 sm:grid-cols-2 sm:px-6 md:grid-cols-3">
-              {[...catalogItems.map((item) => ({ id: item.id, number: item.number, href: `/catalog/${item.id}` })), { id: "all" as const, number: "07", href: "/catalog/all" }].map((item) => {
-                const Icon = item.id === "all" ? LayoutGrid : catalogIcons[item.id];
+              {catalogItems.map((item) => {
+                const Icon = catalogIcons[item.id];
                 return (
                   <li key={item.id}>
                     <Link
-                      href={item.href}
+                      href={`/catalog/${item.id}`}
                       className="group flex flex-col"
                       onClick={() => setCatalogOpen(false)}
                     >

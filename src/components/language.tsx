@@ -11,7 +11,6 @@ const copy = {
     search: "მოძებნე პროდუქტი, კატეგორია ან ბრენდი",
     noResults: (query: string) => `„${query}“ ვერ მოიძებნა.`,
     cart: "კალათა",
-    productCount: (count: number) => `${count} პროდუქტი`,
     navLabel: "კატალოგი",
     title: "MANELA — ჭკვიანი სახლი",
     categories: {
@@ -24,7 +23,6 @@ const copy = {
       about: "შესახებ",
     },
     catalogMenu: {
-      all: "ყველა პროდუქტი",
       security: "უსაფრთხოება და წვდომა",
       sensors: "სენსორები",
       lighting: "განათება",
@@ -39,7 +37,6 @@ const copy = {
     search: "Search for a product, category, or brand",
     noResults: (query: string) => `No results for “${query}”.`,
     cart: "Cart",
-    productCount: (count: number) => `${count} products`,
     navLabel: "Catalog",
     title: "MANELA — Smart home",
     categories: {
@@ -52,7 +49,6 @@ const copy = {
       about: "About",
     },
     catalogMenu: {
-      all: "All products",
       security: "Security & access",
       sensors: "Sensors",
       lighting: "Lighting",
